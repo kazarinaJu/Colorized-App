@@ -80,8 +80,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-QC-O9G">
-                                <rect key="frame" x="121.66666666666667" y="288" width="255.33333333333331" height="106"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DWD-QC-O9G">
+                                <rect key="frame" x="121.66666666666667" y="291" width="255.33333333333331" height="100"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" contentHorizontalAlignment="fill" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tAN-V4-tI3">
                                         <rect key="frame" x="-2" y="0.0" width="259.33333333333337" height="31"/>
@@ -93,7 +93,7 @@
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-o5-wni">
-                                        <rect key="frame" x="-2" y="38" width="259.33333333333337" height="31"/>
+                                        <rect key="frame" x="-2" y="35" width="259.33333333333337" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,7 +102,7 @@
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-zs-FZV">
-                                        <rect key="frame" x="-2" y="76" width="259.33333333333337" height="31"/>
+                                        <rect key="frame" x="-2" y="70" width="259.33333333333337" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,7 +124,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iOa-hU-Xbm" secondAttribute="trailing" constant="16" id="alV-ZJ-6lv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DWD-QC-O9G" secondAttribute="trailing" constant="16" id="knL-hg-GLM"/>
                             <constraint firstItem="iOa-hU-Xbm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="rgb-3O-Xhg"/>
-                            <constraint firstItem="DWD-QC-O9G" firstAttribute="top" secondItem="iOa-hU-Xbm" secondAttribute="bottom" constant="31" id="uEZ-dm-o8l"/>
+                            <constraint firstItem="DWD-QC-O9G" firstAttribute="top" secondItem="iOa-hU-Xbm" secondAttribute="bottom" constant="34" id="uEZ-dm-o8l"/>
                         </constraints>
                     </view>
                     <connections>
