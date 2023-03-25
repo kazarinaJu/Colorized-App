@@ -8,69 +8,45 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet var colorBlock: UIView!
     
-    @IBOutlet var redLabel: UILabel!
-    @IBOutlet var greenLabel: UILabel!
-    @IBOutlet var blueLabel: UILabel!
+    @IBOutlet var colorView: UIView!
     
-    @IBOutlet var redSlider: UISlider!
-    @IBOutlet var greenSlider: UISlider!
-    @IBOutlet var blueSlider: UISlider!
+    @IBOutlet var rLabel: UILabel!
+    @IBOutlet var gLabel: UILabel!
+    @IBOutlet var bLabel: UILabel!
+    
+    @IBOutlet var rSlider: UISlider!
+    @IBOutlet var gSlider: UISlider!
+    @IBOutlet var bSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        colorBlock.layer.cornerRadius = 10
         setupSliderValues()
         setupLabels()
-    }
-    
-    @IBAction func redSliderValueChanged() {
-        redSlider.value = round((.random(in: 0...1)) * 100) / 100
-        redLabel.text = "Red: \(redSlider.value)"
-        colorBlock.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
-    }
-    
-    @IBAction func greenSliderValueChanged() {
-        greenSlider.value = round((.random(in: 0...1)) * 100) / 100
-        greenLabel.text = "Green: \(greenSlider.value)"
-        colorBlock.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
-    }
-    
-    @IBAction func blueSliderValueChanged() {
-        blueSlider.value = round((.random(in: 0...1)) * 100) / 100
-        blueLabel.text = "Blue: \(blueSlider.value)"
-        colorBlock.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
+        setupColorView()
     }
 }
 
 extension ViewController {
     private func setupSliderValues() {
-        redSlider.value = round((.random(in: 0...1)) * 100) / 100
-        greenSlider.value = round((.random(in: 0...1)) * 100) / 100
-        blueSlider.value = round((.random(in: 0...1)) * 100) / 100
+        rSlider.value = .random(in: 0...1)
+        gSlider.value = .random(in: 0...1)
+        bSlider.value = .random(in: 0...1)
     }
     
     private func setupLabels() {
-        redLabel.text = "Red: \(redSlider.value)"
-        greenLabel.text = "Green: \(greenSlider.value)"
-        blueLabel.text = "Blue: \(blueSlider.value)"
+        rLabel.text = String(format: "%.2f", rSlider.value)
+        gLabel.text = String(format: "%.2f", gSlider.value)
+        bLabel.text = String(format: "%.2f", bSlider.value)
+    }
+    
+    private func setupColorView() {
+        colorView.layer.cornerRadius = 10
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(rSlider.value),
+            green: CGFloat(gSlider.value),
+            blue: CGFloat(bSlider.value),
+            alpha: 1
+        )
     }
 }
