@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var rLabel: UILabel!
@@ -23,10 +24,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupSliderValues()
         setupLabels()
-        setupColorView()
+        
+        colorView.layer.cornerRadius = 10
+        changedColorView()
+    }
+    
+    // MARK: - IB Actions
+    @IBAction func rSliderAction() {
+        rLabel.text = String(format: "%.2f", rSlider.value)
+        changedColorView()
+    }
+    
+    @IBAction func gSliderAction() {
+        gLabel.text = String(format: "%.2f", gSlider.value)
+        changedColorView()
+    }
+    
+    @IBAction func bSliderAction() {
+        bLabel.text = String(format: "%.2f", bSlider.value)
+        changedColorView()
     }
 }
 
+// MARK: - Setup UI
 extension ViewController {
     private func setupSliderValues() {
         rSlider.value = .random(in: 0...1)
@@ -40,8 +60,7 @@ extension ViewController {
         bLabel.text = String(format: "%.2f", bSlider.value)
     }
     
-    private func setupColorView() {
-        colorView.layer.cornerRadius = 10
+    private func changedColorView() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(rSlider.value),
             green: CGFloat(gSlider.value),
