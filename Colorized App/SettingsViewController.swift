@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
-        changedColorView()
+        setColor()
         
         redLabel.text = string(from: redSlider)
         greenLabel.text = string(from: greenSlider)
@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func sliderAction(_ sender: UISlider) {
-        changedColorView()
+        setColor()
         switch sender {
         case redSlider:
             redLabel.text = string(from: redSlider)
@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    private func changedColorView() {
+    private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
