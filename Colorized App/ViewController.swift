@@ -9,63 +9,49 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: - IB Outlets
     @IBOutlet var colorView: UIView!
     
-    @IBOutlet var rLabel: UILabel!
-    @IBOutlet var gLabel: UILabel!
-    @IBOutlet var bLabel: UILabel!
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
     
-    @IBOutlet var rSlider: UISlider!
-    @IBOutlet var gSlider: UISlider!
-    @IBOutlet var bSlider: UISlider!
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSliderValues()
-        setupLabels()
-        
         colorView.layer.cornerRadius = 10
         changedColorView()
+        
+        redLabel.text = string(from: redSlider)
+        greenLabel.text = string(from: greenSlider)
+        blueLabel.text = string(from: blueSlider)
     }
     
-    // MARK: - IB Actions
-    @IBAction func rSliderAction() {
-        rLabel.text = String(format: "%.2f", rSlider.value)
+    
+    @IBAction func sliderAction(_ sender: UISlider) {
         changedColorView()
-    }
-    
-    @IBAction func gSliderAction() {
-        gLabel.text = String(format: "%.2f", gSlider.value)
-        changedColorView()
-    }
-    
-    @IBAction func bSliderAction() {
-        bLabel.text = String(format: "%.2f", bSlider.value)
-        changedColorView()
-    }
-}
-
-// MARK: - Setup UI
-extension ViewController {
-    private func setupSliderValues() {
-        rSlider.value = .random(in: 0...1)
-        gSlider.value = .random(in: 0...1)
-        bSlider.value = .random(in: 0...1)
-    }
-    
-    private func setupLabels() {
-        rLabel.text = String(format: "%.2f", rSlider.value)
-        gLabel.text = String(format: "%.2f", gSlider.value)
-        bLabel.text = String(format: "%.2f", bSlider.value)
+        switch sender {
+        case redSlider:
+            redLabel.text = string(from: redSlider)
+        case greenSlider:
+            greenLabel.text = string(from: greenSlider)
+        default:
+            blueLabel.text = string(from: blueSlider)
+        }
     }
     
     private func changedColorView() {
         colorView.backgroundColor = UIColor(
-            red: CGFloat(rSlider.value),
-            green: CGFloat(gSlider.value),
-            blue: CGFloat(bSlider.value),
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
             alpha: 1
         )
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
 }

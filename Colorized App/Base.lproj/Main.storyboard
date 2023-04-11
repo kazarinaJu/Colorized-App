@@ -82,31 +82,31 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tyC-2m-zj4">
                                         <rect key="frame" x="90" y="0.0" width="198" height="114"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tAN-V4-tI3">
+                                            <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tAN-V4-tI3">
                                                 <rect key="frame" x="-2" y="0.0" width="202" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="rSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="7ji-B7-Xwl"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="BS5-Zy-CP8"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-o5-wni">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.26000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-o5-wni">
                                                 <rect key="frame" x="-2" y="42" width="202" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="gSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="aJ4-hX-sn3"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="G07-Pl-HuG"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-zs-FZV">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" value="0.48999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-zs-FZV">
                                                 <rect key="frame" x="-2" y="84" width="202" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="bSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="btN-Xi-pGp"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="eKc-hY-Ji0"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -126,13 +126,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bLabel" destination="ceR-JI-74h" id="PuA-l6-qRf"/>
-                        <outlet property="bSlider" destination="Oaz-zs-FZV" id="fJo-Jo-Fr5"/>
+                        <outlet property="blueLabel" destination="ceR-JI-74h" id="PuA-l6-qRf"/>
+                        <outlet property="blueSlider" destination="Oaz-zs-FZV" id="fJo-Jo-Fr5"/>
                         <outlet property="colorView" destination="iOa-hU-Xbm" id="WIM-bB-cEU"/>
-                        <outlet property="gLabel" destination="2KU-kt-45g" id="OcH-jJ-1bb"/>
-                        <outlet property="gSlider" destination="ThZ-o5-wni" id="TaC-te-Wnm"/>
-                        <outlet property="rLabel" destination="gH7-Zr-gDm" id="1I3-XF-OSw"/>
-                        <outlet property="rSlider" destination="tAN-V4-tI3" id="pjC-7d-zc2"/>
+                        <outlet property="greenLabel" destination="2KU-kt-45g" id="OcH-jJ-1bb"/>
+                        <outlet property="greenSlider" destination="ThZ-o5-wni" id="TaC-te-Wnm"/>
+                        <outlet property="redLabel" destination="gH7-Zr-gDm" id="1I3-XF-OSw"/>
+                        <outlet property="redSlider" destination="tAN-V4-tI3" id="pjC-7d-zc2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
