@@ -8,7 +8,8 @@
 import UIKit
 
 final class SettingsViewController: UIViewController {
-    
+
+// MARK: - IBOutlets
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redLabel: UILabel!
@@ -32,6 +33,7 @@ final class SettingsViewController: UIViewController {
         setLabelText()
     }
     
+// MARK: - IBActions
     @IBAction func sliderAction(_ sender: UISlider) {
         setColor()
         switch sender {
@@ -49,7 +51,7 @@ final class SettingsViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    // MARK: - Settings methods
+// MARK: - Settings methods
     private func setColor() {
         colorView.backgroundColor = selectedColor
         selectedColor = UIColor(
