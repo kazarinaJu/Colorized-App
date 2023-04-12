@@ -7,9 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-    
-    var selectedColor: UIColor!
+final class SettingsViewController: UIViewController {
     
     @IBOutlet var colorView: UIView!
     
@@ -20,13 +18,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
-  
+    
+    var selectedColor: UIColor!
+    unowned var delegate: SettingsViewControllerDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         colorView.layer.cornerRadius = 10
         colorView.backgroundColor = selectedColor
-
+        
         setSliderValue()
         setLabelText()
     }
@@ -42,10 +43,16 @@ class SettingsViewController: UIViewController {
             blueLabel.text = string(from: blueSlider)
         }
     }
-  
-// MARK: - Settings methods
+    
+    @IBAction func doneButtonTap() {
+        delegate.setColorView(for: selectedColor)
+        dismiss(animated: true)
+    }
+    
+    // MARK: - Settings methods
     private func setColor() {
-        colorView.backgroundColor = UIColor(
+        colorView.backgroundColor = selectedColor
+        selectedColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
